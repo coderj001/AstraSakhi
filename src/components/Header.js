@@ -20,11 +20,36 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:space-x-8">
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">Chat</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">Call</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">Live</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">AstroMall</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">Blog</a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              Chat
+            </a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              Call
+            </a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              Live
+            </a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              AstroMall
+            </a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              Blog
+            </a>
           </nav>
 
           {/* Auth Buttons (Desktop) */}
@@ -45,9 +70,33 @@ export default function Header() {
             >
               <span className="sr-only">Open menu</span>
               {isMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
               ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
               )}
             </button>
           </div>
@@ -58,11 +107,36 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <nav className="flex flex-col space-y-2 p-4">
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">Chat</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">Call</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">Live</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">AstroMall</a>
-            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">Blog</a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              Chat
+            </a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              Call
+            </a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              Live
+            </a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              AstroMall
+            </a>
+            <a
+              href="/"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              Blog
+            </a>
           </nav>
           <div className="flex items-center space-x-2 p-4 border-t">
             <button className="w-full px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100">
