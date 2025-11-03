@@ -4,5 +4,18 @@
   "nav.about": "About",
   "nav.contact": "Contact",
   "nav.astrologers": "Astrologers",
-  "language.switcher": "Language"
+  "language.switcher": "Language",
+  "login.title": "Log in to your account",
+  "login.email": "Email address",
+  "login.password": "Password",
+  "login.submit": "Log In",
+  "login.noAccount": "Don't have an account?",
+  "login.signupLink": "Sign up",
+  "signup.title": "Create a new account",
+  "signup.name": "Full name",
+  "signup.email": "Email address",
+  "signup.password": "Password",
+  "signup.submit": "Sign Up",
+  "signup.haveAccount": "Already have an account?",
+  "signup.loginLink": "Log in"
 }

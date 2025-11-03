@@ -62,12 +62,18 @@ export default function Header({ setLanguage }) {
             >
               <FormattedMessage id="language.switcher" />
             </button>
-            <button className="px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100">
+            <Link
+              to="/login"
+              className="px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100"
+            >
               Log In
-            </button>
-            <button className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm">
+            </Link>
+            <Link
+              to="/signup"
+              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm"
+            >
               Sign Up
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -147,12 +153,18 @@ export default function Header({ setLanguage }) {
             >
               <FormattedMessage id="language.switcher" />
             </button>
-            <button className="w-full px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100">
+            <Link
+              to="/login"
+              className="w-full px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100 text-center"
+            >
               Log In
-            </button>
-            <button className="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm">
+            </Link>
+            <Link
+              to="/signup"
+              className="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm text-center"
+            >
               Sign Up
-            </button>
+            </Link>
           </div>
         </div>
       )}

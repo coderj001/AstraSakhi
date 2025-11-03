@@ -4,5 +4,18 @@
   "nav.about": "Sobre nosotros",
   "nav.contact": "Contacto",
   "nav.astrologers": "Astrólogos",
-  "language.switcher": "Idioma"
+  "language.switcher": "Idioma",
+  "login.title": "Inicia sesión en tu cuenta",
+  "login.email": "Correo electrónico",
+  "login.password": "Contraseña",
+  "login.submit": "Iniciar sesión",
+  "login.noAccount": "¿No tienes una cuenta?",
+  "login.signupLink": "Regístrate",
+  "signup.title": "Crea una nueva cuenta",
+  "signup.name": "Nombre completo",
+  "signup.email": "Correo electrónico",
+  "signup.password": "Contraseña",
+  "signup.submit": "Registrarse",
+  "signup.haveAccount": "¿Ya tienes una cuenta?",
+  "signup.loginLink": "Iniciar sesión"
 }

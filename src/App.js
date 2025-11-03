@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header.js';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Astrologers from './pages/Astrologers';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 import { IntlProvider } from 'react-intl';
 import enMessages from './lang/en.json';
@@ -16,12 +18,12 @@ const messages = {
   es: esMessages,
 };
 
-/**
- * Main App Component
- * This is the root component that renders all other components.
- */
-export default function App() {
-  const [language, setLanguage] = useState(navigator.language.split(/[-_]/)[0]);
+function App() {
+  const location = useLocation();
+  const showHeaderFooter = !['/login', '/signup'].includes(location.pathname);
+  const [language, setLanguage] = React.useState(
+    navigator.language.split(/[-_]/)[0],
+  );
 
   return (
     <IntlProvider
@@ -29,15 +31,19 @@ export default function App() {
       messages={messages[language] || messages.en}
     >
       <div className="font-sans antialiased text-gray-900 bg-white">
-        <Header setLanguage={setLanguage} />
+        {showHeaderFooter && <Header setLanguage={setLanguage} />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/astrologers" element={<Astrologers />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
-        <Footer />
+        {showHeaderFooter && <Footer />}
       </div>
     </IntlProvider>
   );
 }
+
+export default App;
