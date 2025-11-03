@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import { ShieldCheck } from './icons';
 
 /**
  * Header Component
  * Displays navigation, logo, and login/register buttons.
  */
-export default function Header() {
+export default function Header({ setLanguage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleLanguage = () => {
+    setLanguage((prevLang) => (prevLang === 'en' ? 'es' : 'en'));
+  };
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -14,46 +20,48 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <h1 className="text-3xl font-bold text-indigo-600">AstroAI</h1>
+            <Link to="/" className="text-3xl font-bold text-indigo-600">
+              <FormattedMessage id="app.title" />
+            </Link>
             <ShieldCheck className="w-6 h-6 text-amber-500 ml-1" />
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:space-x-8">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
-              Chat
-            </a>
-            <a
-              href="/"
+              <FormattedMessage id="nav.home" />
+            </Link>
+            <Link
+              to="/about"
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
-              Call
-            </a>
-            <a
-              href="/"
+              <FormattedMessage id="nav.about" />
+            </Link>
+            <Link
+              to="/contact"
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
-              Live
-            </a>
-            <a
-              href="/"
+              <FormattedMessage id="nav.contact" />
+            </Link>
+            <Link
+              to="/astrologers"
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
-              AstroMall
-            </a>
-            <a
-              href="/"
-              className="font-medium text-gray-600 hover:text-indigo-500"
-            >
-              Blog
-            </a>
+              <FormattedMessage id="nav.astrologers" />
+            </Link>
           </nav>
 
           {/* Auth Buttons (Desktop) */}
           <div className="hidden md:flex items-center space-x-2">
+            <button
+              onClick={toggleLanguage}
+              className="px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100"
+            >
+              <FormattedMessage id="language.switcher" />
+            </button>
             <button className="px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100">
               Log In
             </button>
@@ -107,38 +115,38 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <nav className="flex flex-col space-y-2 p-4">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
-              Chat
-            </a>
-            <a
-              href="/"
+              <FormattedMessage id="nav.home" />
+            </Link>
+            <Link
+              to="/about"
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
-              Call
-            </a>
-            <a
-              href="/"
+              <FormattedMessage id="nav.about" />
+            </Link>
+            <Link
+              to="/contact"
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
-              Live
-            </a>
-            <a
-              href="/"
+              <FormattedMessage id="nav.contact" />
+            </Link>
+            <Link
+              to="/astrologers"
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
-              AstroMall
-            </a>
-            <a
-              href="/"
-              className="font-medium text-gray-600 hover:text-indigo-500"
-            >
-              Blog
-            </a>
+              <FormattedMessage id="nav.astrologers" />
+            </Link>
           </nav>
           <div className="flex items-center space-x-2 p-4 border-t">
+            <button
+              onClick={toggleLanguage}
+              className="w-full px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100"
+            >
+              <FormattedMessage id="language.switcher" />
+            </button>
             <button className="w-full px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100">
               Log In
             </button>
