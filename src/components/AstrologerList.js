@@ -19,7 +19,7 @@ export default function AstrologerList() {
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {featuredAstrologers.map((astro) => (
+          {featuredAstrologers.slice(0, 4).map((astro) => (
             <AstrologerCard key={astro.id} astrologer={astro} />
           ))}
         </div>

@@ -76,3 +76,8 @@ Your application must be usable and beautiful on any screen size.
     Use Fluid Layouts: Use relative units like percentages (%) and viewport units (vw, vh) for containers, so they adapt smoothly to different screen sizes.
     Define Breakpoints Logically: Don't define breakpoints based on specific devices (e.g., "iPhone" or "iPad"). Define them where your layout naturally "breaks" or starts to look awkward. Common breakpoints are sm, md, lg, xl.
     Optimize Touch Targets: On mobile, ensure all interactive elements (buttons, links) have a large enough touch target (at least 44x44px) to be easily tappable.
+
+
+## Rule
+1. Don't run `npm start` as it already running
+2. And run `npm run format` and `npm run lint:fix`

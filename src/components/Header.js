@@ -52,6 +52,30 @@ export default function Header({ setLanguage }) {
             >
               <FormattedMessage id="nav.astrologers" />
             </Link>
+            <Link
+              to="/free-kundli"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              <FormattedMessage id="nav.freeKundli" />
+            </Link>
+            <Link
+              to="/chat-with-astrologer"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              <FormattedMessage id="nav.chatWithAstrologer" />
+            </Link>
+            <Link
+              to="/daily-horoscope"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              <FormattedMessage id="nav.dailyHoroscope" />
+            </Link>
+            <Link
+              to="/kundli-matching"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              <FormattedMessage id="nav.kundliMatching" />
+            </Link>
           </nav>
 
           {/* Auth Buttons (Desktop) */}
@@ -144,6 +168,30 @@ export default function Header({ setLanguage }) {
               className="font-medium text-gray-600 hover:text-indigo-500"
             >
               <FormattedMessage id="nav.astrologers" />
+            </Link>
+            <Link
+              to="/free-kundli"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              <FormattedMessage id="nav.freeKundli" />
+            </Link>
+            <Link
+              to="/chat-with-astrologer"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              <FormattedMessage id="nav.chatWithAstrologer" />
+            </Link>
+            <Link
+              to="/daily-horoscope"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              <FormattedMessage id="nav.dailyHoroscope" />
+            </Link>
+            <Link
+              to="/kundli-matching"
+              className="font-medium text-gray-600 hover:text-indigo-500"
+            >
+              <FormattedMessage id="nav.kundliMatching" />
             </Link>
           </nav>
           <div className="flex items-center space-x-2 p-4 border-t">

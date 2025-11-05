@@ -8,6 +8,10 @@ import Contact from './pages/Contact';
 import Astrologers from './pages/Astrologers';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import FreeKundli from './pages/FreeKundli';
+import ChatWithAstrologer from './pages/ChatWithAstrologer';
+import DailyHoroscope from './pages/DailyHoroscope';
+import KundliMatching from './pages/KundliMatching';
 
 import { IntlProvider } from 'react-intl';
 import enMessages from './lang/en.json';
@@ -39,6 +43,13 @@ function App() {
           <Route path="/astrologers" element={<Astrologers />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/free-kundli" element={<FreeKundli />} />
+          <Route
+            path="/chat-with-astrologer"
+            element={<ChatWithAstrologer />}
+          />
+          <Route path="/daily-horoscope" element={<DailyHoroscope />} />
+          <Route path="/kundli-matching" element={<KundliMatching />} />
         </Routes>
         {showHeaderFooter && <Footer />}
       </div>
