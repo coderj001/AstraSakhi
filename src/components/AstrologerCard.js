@@ -11,7 +11,7 @@ export default function AstrologerCard({ astrologer }) {
       <div className="p-4">
         <div className="flex space-x-4">
           <img
-            className="w-20 h-20 rounded-full border-4 border-indigo-100"
+            className="w-20 h-20 rounded-full border-4 border-indigo-100 mask-radial-at-center mask-radial-from-100%"
             src={astrologer.image}
             alt={astrologer.name}
             onError={(e) => {

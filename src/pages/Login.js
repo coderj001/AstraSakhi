@@ -13,6 +13,12 @@ export default function Login() {
           <p className="mt-2 text-gray-600">
             <FormattedMessage id="login.title" />
           </p>
+          <Link
+            to="/"
+            className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+          >
+            <FormattedMessage id="app.homeLink" />
+          </Link>
         </div>
         <form className="space-y-6">
           <div>

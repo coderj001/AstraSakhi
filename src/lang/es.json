@@ -17,5 +17,6 @@
   "signup.password": "Contraseña",
   "signup.submit": "Registrarse",
   "signup.haveAccount": "¿Ya tienes una cuenta?",
-  "signup.loginLink": "Iniciar sesión"
+  "signup.loginLink": "Iniciar sesión",
+  "app.homeLink": "Inicio"
 }

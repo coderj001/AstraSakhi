@@ -17,5 +17,6 @@
   "signup.password": "Password",
   "signup.submit": "Sign Up",
   "signup.haveAccount": "Already have an account?",
-  "signup.loginLink": "Log in"
+  "signup.loginLink": "Log in",
+  "app.homeLink": "Home"
 }
