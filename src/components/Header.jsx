@@ -27,31 +27,31 @@ export default function Header({ setLanguage }) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className='hidden md:flex md:items-center md:space-x-8'>
+          <nav className='hidden md:flex md:items-center md:space-x-4'>
+            {/* <Link */}
+            {/*   to='/' */}
+            {/*   className='font-medium text-gray-600 hover:text-indigo-500' */}
+            {/* > */}
+            {/*   <FormattedMessage id='nav.home' /> */}
+            {/* </Link> */}
+            {/* <Link */}
+            {/*   to='/about' */}
+            {/*   className='font-medium text-gray-600 hover:text-indigo-500' */}
+            {/* > */}
+            {/*   <FormattedMessage id='nav.about' /> */}
+            {/* </Link> */}
+            {/* <Link */}
+            {/*   to='/contact' */}
+            {/*   className='font-medium text-gray-600 hover:text-indigo-500' */}
+            {/* > */}
+            {/*   <FormattedMessage id='nav.contact' /> */}
+            {/* </Link> */}
             <Link
-              to='/'
+              to='/astrologers'
               className='font-medium text-gray-600 hover:text-indigo-500'
             >
-              <FormattedMessage id='nav.home' />
+              <FormattedMessage id='nav.astrologers' />
             </Link>
-            {/* <Link */}
-            {/*   to="/about" */}
-            {/*   className="font-medium text-gray-600 hover:text-indigo-500" */}
-            {/* > */}
-            {/*   <FormattedMessage id="nav.about" /> */}
-            {/* </Link> */}
-            {/* <Link */}
-            {/*   to="/contact" */}
-            {/*   className="font-medium text-gray-600 hover:text-indigo-500" */}
-            {/* > */}
-            {/*   <FormattedMessage id="nav.contact" /> */}
-            {/* </Link> */}
-            {/* <Link */}
-            {/*   to="/astrologers" */}
-            {/*   className="font-medium text-gray-600 hover:text-indigo-500" */}
-            {/* > */}
-            {/*   <FormattedMessage id="nav.astrologers" /> */}
-            {/* </Link> */}
             <Link
               to='/free-kundli'
               className='font-medium text-gray-600 hover:text-indigo-500'

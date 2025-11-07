@@ -2,7 +2,7 @@
 
 ## Rule
 
-1. Don't run `npm start` as it already running
+1. Don't run `npm start` or `npm run dev` as it already running
 2. And run `npm run format`
 
 ## Project: AstroAI
