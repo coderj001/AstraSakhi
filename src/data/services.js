@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Video, ShoppingBag } from '../components/icons';
+import { MessageCircle, Phone, Video, ShoppingBag } from '../components/icons'
 
 export const services = [
   {
@@ -29,4 +29,4 @@ export const services = [
     color: 'text-amber-500',
     bg: 'bg-amber-50',
   },
-];
+]

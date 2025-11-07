@@ -20,4 +20,4 @@ export const testimonials = [
       "I was skeptical about online astrology, but the focus on trust and authenticity here is clear. My 'AstroMall' purchase was also certified. Highly recommend.",
     service: 'Gemstone Purchase',
   },
-];
+]

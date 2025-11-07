@@ -11,7 +11,8 @@ import {
   Lock,
   Heart,
   ArrowRight,
-} from 'lucide-react';
+  ArrowLeft,
+} from 'lucide-react'
 
 export {
   ShieldCheck,
@@ -26,4 +27,5 @@ export {
   Lock,
   Heart,
   ArrowRight,
-};
+  ArrowLeft,
+}
