@@ -12,6 +12,8 @@ import FreeKundli from './pages/FreeKundli'
 import ChatWithAstrologer from './pages/ChatWithAstrologer'
 import DailyHoroscope from './pages/DailyHoroscope'
 import KundliMatching from './pages/KundliMatching'
+import Compatibility from './pages/Compatibility'
+import CompatibilityResult from './pages/CompatibilityResult'
 import ChatPage from './pages/ChatPage.jsx'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -57,6 +59,11 @@ function App() {
           />
           <Route path='/daily-horoscope' element={<DailyHoroscope />} />
           <Route path='/kundli-matching' element={<KundliMatching />} />
+          <Route path='/compatibility' element={<Compatibility />} />
+          <Route
+            path='/compatibility-result'
+            element={<CompatibilityResult />}
+          />
           <Route path='/chat/:id' element={<ChatPage />} />
         </Routes>
         {showHeaderFooter && <Footer />}

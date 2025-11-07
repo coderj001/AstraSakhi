@@ -46,12 +46,12 @@ export default function Header({ setLanguage }) {
             {/* > */}
             {/*   <FormattedMessage id='nav.contact' /> */}
             {/* </Link> */}
-            <Link
-              to='/astrologers'
-              className='font-medium text-gray-600 hover:text-indigo-500'
-            >
-              <FormattedMessage id='nav.astrologers' />
-            </Link>
+            {/* <Link */}
+            {/*   to='/astrologers' */}
+            {/*   className='font-medium text-gray-600 hover:text-indigo-500' */}
+            {/* > */}
+            {/*   <FormattedMessage id='nav.astrologers' /> */}
+            {/* </Link> */}
             <Link
               to='/free-kundli'
               className='font-medium text-gray-600 hover:text-indigo-500'
@@ -75,6 +75,12 @@ export default function Header({ setLanguage }) {
               className='font-medium text-gray-600 hover:text-indigo-500'
             >
               <FormattedMessage id='nav.kundliMatching' />
+            </Link>
+            <Link
+              to='/compatibility'
+              className='font-medium text-gray-600 hover:text-indigo-500'
+            >
+              <FormattedMessage id='nav.compatibility' />
             </Link>
           </nav>
 
@@ -192,6 +198,12 @@ export default function Header({ setLanguage }) {
               className='font-medium text-gray-600 hover:text-indigo-500'
             >
               <FormattedMessage id='nav.kundliMatching' />
+            </Link>
+            <Link
+              to='/compatibility'
+              className='font-medium text-gray-600 hover:text-indigo-500'
+            >
+              <FormattedMessage id='nav.compatibility' />
             </Link>
           </nav>
           <div className='flex items-center space-x-2 p-4 border-t'>
