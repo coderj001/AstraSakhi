@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import { zodiacSigns } from '../data/signs'
 
 const CompatibilityProgressBar = ({ category, percentage }) => (
@@ -19,6 +19,7 @@ const CompatibilityProgressBar = ({ category, percentage }) => (
 
 export default function CompatibilityResult() {
   const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
   const yourSign = searchParams.get('yourSign')
   const partnerSign = searchParams.get('partnerSign')
 
@@ -97,6 +98,14 @@ export default function CompatibilityResult() {
             category='Trust'
             percentage={compatibilityData.trust}
           />
+        </div>
+        <div className='text-center mt-8'>
+          <button
+            onClick={() => navigate('/compatibility')}
+            className='bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 ease-in-out'
+          >
+            Check New Compatibility
+          </button>
         </div>
       </div>
     </div>

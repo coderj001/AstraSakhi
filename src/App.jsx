@@ -15,6 +15,7 @@ import KundliMatching from './pages/KundliMatching'
 import Compatibility from './pages/Compatibility'
 import CompatibilityResult from './pages/CompatibilityResult'
 import ChatPage from './pages/ChatPage.jsx'
+import DivyaVaaniAIChat from './pages/DivyaVaaniAIChat'
 import ScrollToTop from './components/ScrollToTop'
 
 import { IntlProvider } from 'react-intl'
@@ -65,6 +66,7 @@ function App() {
             element={<CompatibilityResult />}
           />
           <Route path='/chat/:id' element={<ChatPage />} />
+          <Route path='/divyavaani-ai-chat' element={<DivyaVaaniAIChat />} />
         </Routes>
         {showHeaderFooter && <Footer />}
       </div>

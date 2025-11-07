@@ -1,5 +1,6 @@
 import React from 'react'
 import { services } from '../data/services'
+import { Link } from 'react-router-dom'
 
 /**
  * Services Section
@@ -34,11 +35,17 @@ export default function Services() {
               <p className='mt-2 text-base text-gray-700'>
                 {service.description}
               </p>
-              <button
+              <Link
+                to={
+                  service.name === 'DivyaVaani AI'
+                    ? '/divyavaani-ai-chat'
+                    : 'chat-with-astrologer'
+                }
                 className={`mt-6 w-full px-4 py-2 text-sm font-medium text-white ${service.color.replace('text', 'bg').replace('-500', '-600')} rounded-lg hover:${service.color.replace('text', 'bg').replace('-500', '-700')}`}
+                chat-with-astrologer
               >
                 Find Experts
-              </button>
+              </Link>
             </div>
           ))}
         </div>

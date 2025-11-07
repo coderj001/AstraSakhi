@@ -23,9 +23,10 @@ export const services = [
     bg: 'bg-pink-50',
   },
   {
-    name: 'AstroMall',
+    name: 'DivyaVaani AI',
     icon: ShoppingBag,
-    description: 'Shop for certified gemstones, remedies, and puja items.',
+    description:
+      'Converse with the Divine Within. Talk with AI Gods and deities.',
     color: 'text-amber-500',
     bg: 'bg-amber-50',
   },

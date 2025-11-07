@@ -1,5 +1,6 @@
 import React from 'react'
 import { ShieldCheck, Lock, Heart, ShoppingBag, ArrowRight } from './icons'
+import { Link } from 'react-router-dom'
 
 /**
  * Hero Section
@@ -20,10 +21,13 @@ export default function HeroSection() {
           us.
         </p>
         <div className='mt-8 flex justify-center space-x-4'>
-          <button className='inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-lg shadow-sm hover:bg-indigo-700'>
+          <Link
+            to='/chat-with-astrologer'
+            className='inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-lg shadow-sm hover:bg-indigo-700'
+          >
             Start Your First Chat
             <ArrowRight className='w-5 h-5 ml-2' />
-          </button>
+          </Link>
         </div>
         <div className='mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-center'>
           <div className='bg-white p-4 rounded-lg shadow-sm'>

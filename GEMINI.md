@@ -23,6 +23,7 @@
 Used for **feature-rich, fast, and modular web applications** — ideal for dashboards, internal tools, or complex public web UIs.
 
 **Key Principles:**
+
 - Lightweight and modular structure.
 - Component-driven development.
 - API data handled via React Query.
@@ -34,6 +35,7 @@ Used for **feature-rich, fast, and modular web applications** — ideal for dash
 ## 🎨 Aesthetic & Responsive UI/UX Design Guidelines (Simplified)
 
 ### 1. Core Principles
+
 - **Clarity:** Every element should have a clear purpose.
 - **Consistency:** Similar components behave and look the same.
 - **Simplicity:** Minimize clutter — highlight what’s essential.
@@ -41,6 +43,7 @@ Used for **feature-rich, fast, and modular web applications** — ideal for dash
 ---
 
 ### 2. Layout & Spacing
+
 - Use a **12-column grid system**.
 - Apply **8-point spacing scale** → (4, 8, 16, 24, 32px, etc.).
 - Use **whitespace** generously to group or separate elements visually.
@@ -48,6 +51,7 @@ Used for **feature-rich, fast, and modular web applications** — ideal for dash
 ---
 
 ### 3. Typography
+
 - Max **2 font families**:
   - Suggested: `Inter`, `Manrope`, or system UI font.
 - Define **type scale** → (12, 14, 16, 20, 24, 32px).
@@ -58,11 +62,11 @@ Used for **feature-rich, fast, and modular web applications** — ideal for dash
 
 ### 4. Color Palette
 
-| Type | Purpose |
-|------|----------|
-| **Primary (1–2)** | Brand & main actions |
-| **Secondary (1–2)** | Accent & highlights |
-| **Neutrals (3–5)** | Backgrounds, borders, text |
+| Type                | Purpose                                                                        |
+| ------------------- | ------------------------------------------------------------------------------ |
+| **Primary (1–2)**   | Brand & main actions                                                           |
+| **Secondary (1–2)** | Accent & highlights                                                            |
+| **Neutrals (3–5)**  | Backgrounds, borders, text                                                     |
 | **Semantic Colors** | ✅ Success (Green), ⚠️ Warning (Yellow/Orange), ❌ Error (Red), ℹ️ Info (Blue) |
 
 **Accessibility:**
@@ -71,6 +75,7 @@ All text/background color combinations must meet **WCAG AA contrast standards**.
 ---
 
 ### 5. Components & Interaction States
+
 - Design for all states:
   **default, hover, focus, active, disabled, loading, empty**.
 - Provide **instant feedback** → loaders, toasts, validation states.
@@ -79,6 +84,7 @@ All text/background color combinations must meet **WCAG AA contrast standards**.
 ---
 
 ### 6. Responsiveness
+
 - **Mobile-first** approach.
 - Use **fluid units**: `%`, `vw`, `vh` for layouts.
 - Define **breakpoints** (`sm`, `md`, `lg`, `xl`) where layout naturally breaks.
@@ -88,14 +94,14 @@ All text/background color combinations must meet **WCAG AA contrast standards**.
 
 ## ⚙️ TL;DR Summary
 
-| Category | Rule Summary |
-|-----------|---------------|
-| Layout | 12-col grid, 8pt spacing |
-| Typography | Inter/Manrope, 2 fonts max |
-| Colors | Primary, Secondary, Neutrals, Semantic |
-| Accessibility | WCAG AA contrast |
-| Components | Define all states + feedback |
-| Responsive | Mobile-first + fluid units |
+| Category        | Rule Summary                             |
+| --------------- | ---------------------------------------- |
+| Layout          | 12-col grid, 8pt spacing                 |
+| Typography      | Inter/Manrope, 2 fonts max               |
+| Colors          | Primary, Secondary, Neutrals, Semantic   |
+| Accessibility   | WCAG AA contrast                         |
+| Components      | Define all states + feedback             |
+| Responsive      | Mobile-first + fluid units               |
 | Change Tracking | Log all major Gemini modifications below |
 
 ---
@@ -107,7 +113,14 @@ All text/background color combinations must meet **WCAG AA contrast standards**.
 
 ```markdown
 ### [YYYY-MM-DD] <Summary>
+
 - Description: <What was changed>
 - Reason: <Why it was changed>
 - Impact: <Files, components, or features affected>
+```
 
+### [2025-11-07] Added DivyaVaani AI Chat Feature
+
+- Description: Renamed 'AstroMall' to 'DivyaVaani AI' and created a new page at `/divyavaani-ai-chat`. This page displays a list of divine entities that users can select to start a conversation.
+- Reason: To implement the new "DivyaVaani AI" feature as requested by the user.
+- Impact: `src/data/services.js`, `src/components/Services.jsx`, `src/pages/DivyaVaaniAIChat.jsx`, `src/App.jsx`
