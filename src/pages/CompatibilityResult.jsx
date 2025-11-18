@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { zodiacSigns } from '../data/signs'
+import apiService from '../services/api'
 
 const CompatibilityProgressBar = ({ category, percentage }) => (
   <div className='mb-6'>
@@ -19,20 +20,50 @@ const CompatibilityProgressBar = ({ category, percentage }) => (
 
 export default function CompatibilityResult() {
   const [searchParams] = useSearchParams()
-  const navigate = useNavigate()
   const yourSign = searchParams.get('yourSign')
   const partnerSign = searchParams.get('partnerSign')
+  const [compatibilityData, setCompatibilityData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   const yourSignData = zodiacSigns.find((s) => s.sign === yourSign)
   const partnerSignData = zodiacSigns.find((s) => s.sign === partnerSign)
 
-  // Dummy compatibility data - replace with real logic later
-  const compatibilityData = {
-    love: Math.floor(Math.random() * 51) + 50, // 50-100%
-    sex: Math.floor(Math.random() * 51) + 50,
-    friendship: Math.floor(Math.random() * 51) + 50,
-    communication: Math.floor(Math.random() * 51) + 50,
-    trust: Math.floor(Math.random() * 51) + 50,
+  useEffect(() => {
+    if (yourSign && partnerSign) {
+      const fetchData = async () => {
+        try {
+          setLoading(true)
+          const data = await apiService.getCompatibility(yourSign, partnerSign)
+          setCompatibilityData(data.data)
+        } catch (error) {
+          setError(error)
+        } finally {
+          setLoading(false)
+        }
+      }
+      fetchData()
+    }
+  }, [yourSign, partnerSign])
+
+  const navigate = useNavigate()
+  if (loading) {
+    return (
+      <div className='container mx-auto px-4 py-8 text-center'>
+        <div className='animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-indigo-500 mx-auto'></div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className='container mx-auto px-4 py-8 text-center'>
+        <h1 className='text-2xl font-bold text-red-600'>
+          Error fetching compatibility data
+        </h1>
+        <p className='text-gray-600'>{error.message}</p>
+      </div>
+    )
   }
 
   if (!yourSignData || !partnerSignData) {
@@ -77,28 +108,37 @@ export default function CompatibilityResult() {
           Love, sex, friendship & more
         </p>
 
-        <div>
-          <CompatibilityProgressBar
-            category='Love'
-            percentage={compatibilityData.love}
-          />
-          <CompatibilityProgressBar
-            category='Sex'
-            percentage={compatibilityData.sex}
-          />
-          <CompatibilityProgressBar
-            category='Friendship'
-            percentage={compatibilityData.friendship}
-          />
-          <CompatibilityProgressBar
-            category='Communication'
-            percentage={compatibilityData.communication}
-          />
-          <CompatibilityProgressBar
-            category='Trust'
-            percentage={compatibilityData.trust}
-          />
-        </div>
+        {compatibilityData && (
+          <div>
+            <CompatibilityProgressBar
+              category='Love'
+              percentage={compatibilityData.lovePercent}
+            />
+            <h3 className='font-semibold text-lg text-gray-700 mt-4'>Love Compatibility Details:</h3>
+            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>{compatibilityData.love}</p>
+
+            <CompatibilityProgressBar
+              category='Sex'
+              percentage={compatibilityData.sexualPercent}
+            />
+            <h3 className='font-semibold text-lg text-gray-700 mt-4'>Sexual Compatibility Details:</h3>
+            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>{compatibilityData.sexual}</p>
+
+            <CompatibilityProgressBar
+              category='Friendship'
+              percentage={compatibilityData.friendshipPercent}
+            />
+            <h3 className='font-semibold text-lg text-gray-700 mt-4'>Friendship Compatibility Details:</h3>
+            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>{compatibilityData.friendship}</p>
+
+            <CompatibilityProgressBar
+              category='Communication'
+              percentage={compatibilityData.communicationPercent}
+            />
+            <h3 className='font-semibold text-lg text-gray-700 mt-4'>Communication Compatibility Details:</h3>
+            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>{compatibilityData.communication}</p>
+          </div>
+        )}
         <div className='text-center mt-8'>
           <button
             onClick={() => navigate('/compatibility')}
@@ -111,3 +151,4 @@ export default function CompatibilityResult() {
     </div>
   )
 }
+

@@ -60,20 +60,6 @@ Used for **feature-rich, fast, and modular web applications** — ideal for dash
 
 ---
 
-### 4. Color Palette
-
-| Type                | Purpose                                                                        |
-| ------------------- | ------------------------------------------------------------------------------ |
-| **Primary (1–2)**   | Brand & main actions                                                           |
-| **Secondary (1–2)** | Accent & highlights                                                            |
-| **Neutrals (3–5)**  | Backgrounds, borders, text                                                     |
-| **Semantic Colors** | ✅ Success (Green), ⚠️ Warning (Yellow/Orange), ❌ Error (Red), ℹ️ Info (Blue) |
-
-**Accessibility:**
-All text/background color combinations must meet **WCAG AA contrast standards**.
-
----
-
 ### 5. Components & Interaction States
 
 - Design for all states:
@@ -124,3 +110,15 @@ All text/background color combinations must meet **WCAG AA contrast standards**.
 - Description: Renamed 'AstroMall' to 'DivyaVaani AI' and created a new page at `/divyavaani-ai-chat`. This page displays a list of divine entities that users can select to start a conversation.
 - Reason: To implement the new "DivyaVaani AI" feature as requested by the user.
 - Impact: `src/data/services.js`, `src/components/Services.jsx`, `src/pages/DivyaVaaniAIChat.jsx`, `src/App.jsx`
+
+### [2025-11-18] Added Proxy Server for API Endpoints
+
+- Description: Created a Node.js proxy server in a new `proxy-server` directory. The proxy server uses Express and CORS to handle API requests, forwarding them to the actual API endpoint and returning the response to the frontend.
+- Reason: To provide a dedicated proxy server for API endpoints, enabling the frontend to fetch data from APIs through a controlled and centralized proxy, as requested by the user.
+- Impact: `proxy-server/`, `proxy-server/package.json`, `proxy-server/server.js`, `package.json`, `src/pages/DivyaVaaniAIChat.jsx`
+
+### [2025-11-18] Implemented Zodiac Compatibility Feature
+
+- Description: Added a new feature to check zodiac sign compatibility. This involved creating a new proxy endpoint for the compatibility API, centralizing API calls into a dedicated service, and creating separate pages for user input (`Compatibility.jsx`) and results display (`CompatibilityResult.jsx`). The results page shows compatibility percentages and descriptive text.
+- Reason: To add the user-requested zodiac compatibility feature, with a robust architecture using a separate results page and a centralized API service.
+- Impact: `proxy-server/server.js`, `src/services/api.js`, `src/pages/Compatibility.jsx`, `src/pages/CompatibilityResult.jsx`
