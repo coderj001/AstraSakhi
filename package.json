@@ -7,10 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "format": "prettier --write .",
     "preview": "vite preview",
     "proxy-server": "node proxy-server/server.js"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@tailwindcss/vite": "^4.1.17",
     "lucide-react": "^0.552.0",
     "react": "^19.2.0",

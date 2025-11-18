@@ -1,6 +1,8 @@
 export const zodiacSigns = [
   {
     sign: 'Aries',
+    sign_small_cap: 'aries',
+    sign_upper_cap: 'ARIES',
     date_range: 'Mar 21 - Apr 19',
     symbol: '♈',
     element: 'Fire',
@@ -9,6 +11,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Taurus',
+    sign_small_cap: 'taurus',
+    sign_upper_cap: 'TAURUS',
     date_range: 'Apr 20 - May 20',
     symbol: '♉',
     element: 'Earth',
@@ -17,6 +21,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Gemini',
+    sign_small_cap: 'gemini',
+    sign_upper_cap: 'GEMINI',
     date_range: 'May 21 - Jun 21',
     symbol: '♊',
     element: 'Air',
@@ -25,6 +31,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Cancer',
+    sign_small_cap: 'cancer',
+    sign_upper_cap: 'CANCER',
     date_range: 'Jun 22 - Jul 22',
     symbol: '♋',
     element: 'Water',
@@ -33,6 +41,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Leo',
+    sign_small_cap: 'leo',
+    sign_upper_cap: 'LEO',
     date_range: 'Jul 23 - Aug 22',
     symbol: '♌',
     element: 'Fire',
@@ -41,6 +51,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Virgo',
+    sign_small_cap: 'virgo',
+    sign_upper_cap: 'VIRGO',
     date_range: 'Aug 23 - Sep 22',
     symbol: '♍',
     element: 'Earth',
@@ -49,6 +61,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Libra',
+    sign_small_cap: 'libra',
+    sign_upper_cap: 'LIBRA',
     date_range: 'Sep 23 - Oct 23',
     symbol: '♎',
     element: 'Air',
@@ -57,6 +71,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Scorpio',
+    sign_small_cap: 'scorpio',
+    sign_upper_cap: 'SCORPIO',
     date_range: 'Oct 24 - Nov 21',
     symbol: '♏',
     element: 'Water',
@@ -65,6 +81,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Sagittarius',
+    sign_small_cap: 'sagittarius',
+    sign_upper_cap: 'SAGITTARIUS',
     date_range: 'Nov 22 - Dec 21',
     symbol: '♐',
     element: 'Fire',
@@ -73,6 +91,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Capricorn',
+    sign_small_cap: 'capricorn',
+    sign_upper_cap: 'CAPRICORN',
     date_range: 'Dec 22 - Jan 19',
     symbol: '♑',
     element: 'Earth',
@@ -81,6 +101,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Aquarius',
+    sign_small_cap: 'aquarius',
+    sign_upper_cap: 'AQUARIUS',
     date_range: 'Jan 20 - Feb 18',
     symbol: '♒',
     element: 'Air',
@@ -89,6 +111,8 @@ export const zodiacSigns = [
   },
   {
     sign: 'Pisces',
+    sign_small_cap: 'pisces',
+    sign_upper_cap: 'PISCES',
     date_range: 'Feb 19 - Mar 20',
     symbol: '♓',
     element: 'Water',

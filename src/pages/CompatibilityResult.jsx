@@ -114,29 +114,45 @@ export default function CompatibilityResult() {
               category='Love'
               percentage={compatibilityData.lovePercent}
             />
-            <h3 className='font-semibold text-lg text-gray-700 mt-4'>Love Compatibility Details:</h3>
-            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>{compatibilityData.love}</p>
+            <h3 className='font-semibold text-lg text-gray-700 mt-4'>
+              Love Compatibility Details:
+            </h3>
+            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>
+              {compatibilityData.love}
+            </p>
 
             <CompatibilityProgressBar
               category='Sex'
               percentage={compatibilityData.sexualPercent}
             />
-            <h3 className='font-semibold text-lg text-gray-700 mt-4'>Sexual Compatibility Details:</h3>
-            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>{compatibilityData.sexual}</p>
+            <h3 className='font-semibold text-lg text-gray-700 mt-4'>
+              Sexual Compatibility Details:
+            </h3>
+            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>
+              {compatibilityData.sexual}
+            </p>
 
             <CompatibilityProgressBar
               category='Friendship'
               percentage={compatibilityData.friendshipPercent}
             />
-            <h3 className='font-semibold text-lg text-gray-700 mt-4'>Friendship Compatibility Details:</h3>
-            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>{compatibilityData.friendship}</p>
+            <h3 className='font-semibold text-lg text-gray-700 mt-4'>
+              Friendship Compatibility Details:
+            </h3>
+            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>
+              {compatibilityData.friendship}
+            </p>
 
             <CompatibilityProgressBar
               category='Communication'
               percentage={compatibilityData.communicationPercent}
             />
-            <h3 className='font-semibold text-lg text-gray-700 mt-4'>Communication Compatibility Details:</h3>
-            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>{compatibilityData.communication}</p>
+            <h3 className='font-semibold text-lg text-gray-700 mt-4'>
+              Communication Compatibility Details:
+            </h3>
+            <p className='text-gray-600 mb-6 whitespace-pre-wrap'>
+              {compatibilityData.communication}
+            </p>
           </div>
         )}
         <div className='text-center mt-8'>
@@ -151,4 +167,3 @@ export default function CompatibilityResult() {
     </div>
   )
 }
-
