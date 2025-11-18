@@ -17,6 +17,15 @@ const apiService = {
     }
     return response.json()
   },
+  getCitySuggestions: async (key) => {
+    const response = await fetch(
+      `${API_BASE_URL}/cities/autocomplete?key=${key}`,
+    )
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    return response.json()
+  },
 }
 
 export default apiService

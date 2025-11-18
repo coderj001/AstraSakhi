@@ -1,61 +1,77 @@
 import React, { useState } from 'react'
+import Autocomplete from '../components/Autocomplete'
+import { useAutocomplete } from '../hooks/useAutocomplete'
 
-const KundliForm = ({ title }) => (
-  <div className='bg-white p-6 rounded-lg shadow-md'>
-    <h2 className='text-2xl font-semibold text-gray-800 mb-6 text-center'>
-      {title}
-    </h2>
-    <form>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-        <div className='mb-4'>
-          <label
-            htmlFor='name'
-            className='block text-gray-700 font-medium mb-2'
-          >
-            Name
-          </label>
-          <input
-            type='text'
-            id='name'
-            className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'
-            placeholder='Enter name'
-          />
+const KundliForm = ({ title }) => {
+  const { inputValue, suggestions, loading, onInputChange, onSuggestionClick } =
+    useAutocomplete()
+  return (
+    <div className='bg-white p-6 rounded-lg shadow-md'>
+      <h2 className='text-2xl font-semibold text-gray-800 mb-6 text-center'>
+        {title}
+      </h2>
+      <form>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+          <div className='mb-4'>
+            <label
+              htmlFor='name'
+              className='block text-gray-700 font-medium mb-2'
+            >
+              Name
+            </label>
+            <input
+              type='text'
+              id='name'
+              className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'
+              placeholder='Enter name'
+            />
+          </div>
+          <div className='mb-4'>
+            <label
+              htmlFor='dob'
+              className='block text-gray-700 font-medium mb-2'
+            >
+              Date of Birth
+            </label>
+            <input
+              type='date'
+              id='dob'
+              className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'
+            />
+          </div>
+          <div className='mb-4'>
+            <label
+              htmlFor='tob'
+              className='block text-gray-700 font-medium mb-2'
+            >
+              Time of Birth
+            </label>
+            <input
+              type='time'
+              id='tob'
+              className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'
+            />
+          </div>
+          <div className='mb-4'>
+            <label
+              htmlFor='pob'
+              className='block text-gray-700 font-medium mb-2'
+            >
+              Birth Place
+            </label>
+            <Autocomplete
+              inputValue={inputValue}
+              suggestions={suggestions}
+              loading={loading}
+              onInputChange={onInputChange}
+              onSuggestionClick={onSuggestionClick}
+            />
+          </div>
         </div>
-        <div className='mb-4'>
-          <label htmlFor='dob' className='block text-gray-700 font-medium mb-2'>
-            Date of Birth
-          </label>
-          <input
-            type='date'
-            id='dob'
-            className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'
-          />
-        </div>
-        <div className='mb-4'>
-          <label htmlFor='tob' className='block text-gray-700 font-medium mb-2'>
-            Time of Birth
-          </label>
-          <input
-            type='time'
-            id='tob'
-            className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'
-          />
-        </div>
-        <div className='mb-4'>
-          <label htmlFor='pob' className='block text-gray-700 font-medium mb-2'>
-            Birth Place
-          </label>
-          <input
-            type='text'
-            id='pob'
-            className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500'
-            placeholder='Enter birth place'
-          />
-        </div>
-      </div>
-    </form>
-  </div>
-)
+      </form>
+    </div>
+  )
+}
 
 export default function KundliMatching() {
   const [activeTab, setActiveTab] = useState('boy')

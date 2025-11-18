@@ -2,7 +2,7 @@
 
 ## 🧠 Rules for Gemini
 
-1. **Do not run** `npm start` or `npm run dev` — the development server is already running.
+1. **Do not run** `npm start` or `npm run dev` or `npm run proxy-server`- — the development server is already running.
 2. Always run **`npm run format`** after making code changes.
 3. If Gemini makes **major changes**, it must **log them below** under the **Change Log** section.
    - Examples:
@@ -13,6 +13,14 @@
 ---
 
 ## 🚀 Project: AstroAI
+
+### File / Folder Conventions
+
+1. `src/pages/\*` — top-level routes / page components (PascalCase).
+2. `src/components/\*` — reusable components (PascalCase).
+3. `src/hooks/\*` — custom hooks (useCamelCase.js).
+4. `src/services/api.js` — centralized client calling proxy endpoints.
+5. `proxy-server/server.js` — express proxy endpoints; keep logic simple.
 
 ### 🧩 Frontend Architecture
 
@@ -34,51 +42,11 @@ Used for **feature-rich, fast, and modular web applications** — ideal for dash
 
 ## 🎨 Aesthetic & Responsive UI/UX Design Guidelines (Simplified)
 
-### 1. Core Principles
-
 - **Clarity:** Every element should have a clear purpose.
 - **Consistency:** Similar components behave and look the same.
 - **Simplicity:** Minimize clutter — highlight what’s essential.
 
----
-
-### 2. Layout & Spacing
-
-- Use a **12-column grid system**.
-- Apply **8-point spacing scale** → (4, 8, 16, 24, 32px, etc.).
-- Use **whitespace** generously to group or separate elements visually.
-
----
-
-### 3. Typography
-
-- Max **2 font families**:
-  - Suggested: `Inter`, `Manrope`, or system UI font.
-- Define **type scale** → (12, 14, 16, 20, 24, 32px).
-- Maintain **line-height ≈ 1.5× font-size** for readability.
-- Keep **line length between 50–75 characters**.
-
----
-
-### 5. Components & Interaction States
-
-- Design for all states:
-  **default, hover, focus, active, disabled, loading, empty**.
-- Provide **instant feedback** → loaders, toasts, validation states.
-- Use **headless component libraries** like `shadcn/ui` or `Radix UI` for accessible, reusable components.
-
----
-
-### 6. Responsiveness
-
-- **Mobile-first** approach.
-- Use **fluid units**: `%`, `vw`, `vh` for layouts.
-- Define **breakpoints** (`sm`, `md`, `lg`, `xl`) where layout naturally breaks.
-- Ensure **touch targets ≥ 44×44px** for mobile usability.
-
----
-
-## ⚙️ TL;DR Summary
+## ⚙ TL;DR Summary
 
 | Category        | Rule Summary                             |
 | --------------- | ---------------------------------------- |
@@ -89,6 +57,25 @@ Used for **feature-rich, fast, and modular web applications** — ideal for dash
 | Components      | Define all states + feedback             |
 | Responsive      | Mobile-first + fluid units               |
 | Change Tracking | Log all major Gemini modifications below |
+
+---
+
+### ️️️Proxy Endpoint Pattern
+
+1. **Endpoint file**: proxy-server/server.js (group endpoints logically with comments).
+2. **Keep proxy thin**: validate params → call upstream API → return JSON.
+3. Do not embed heavy business logic in proxy.
+
+**Example**:
+
+```
+// GET /api/autocomplete?q=kolkata
+app.get('/api/autocomplete', async (req, res) => {
+const { q } = req.query;
+if (!q) return res.status(400).json({ error: 'q required' });
+// forward to external API, sanitize and return
+});
+```
 
 ---
 
@@ -105,20 +92,10 @@ Used for **feature-rich, fast, and modular web applications** — ideal for dash
 - Impact: <Files, components, or features affected>
 ```
 
-### [2025-11-07] Added DivyaVaani AI Chat Feature
+### 2025-11-07: Added DivyaVaani AI Chat Feature (new page + services + UI)
 
-- Description: Renamed 'AstroMall' to 'DivyaVaani AI' and created a new page at `/divyavaani-ai-chat`. This page displays a list of divine entities that users can select to start a conversation.
-- Reason: To implement the new "DivyaVaani AI" feature as requested by the user.
-- Impact: `src/data/services.js`, `src/components/Services.jsx`, `src/pages/DivyaVaaniAIChat.jsx`, `src/App.jsx`
+### 2025-11-18: Added Proxy Server for API Endpoints (new proxy-server dir)
 
-### [2025-11-18] Added Proxy Server for API Endpoints
+### 2025-11-18: Implemented Zodiac Compatibility Feature (pages + service)
 
-- Description: Created a Node.js proxy server in a new `proxy-server` directory. The proxy server uses Express and CORS to handle API requests, forwarding them to the actual API endpoint and returning the response to the frontend.
-- Reason: To provide a dedicated proxy server for API endpoints, enabling the frontend to fetch data from APIs through a controlled and centralized proxy, as requested by the user.
-- Impact: `proxy-server/`, `proxy-server/package.json`, `proxy-server/server.js`, `package.json`, `src/pages/DivyaVaaniAIChat.jsx`
-
-### [2025-11-18] Implemented Zodiac Compatibility Feature
-
-- Description: Added a new feature to check zodiac sign compatibility. This involved creating a new proxy endpoint for the compatibility API, centralizing API calls into a dedicated service, and creating separate pages for user input (`Compatibility.jsx`) and results display (`CompatibilityResult.jsx`). The results page shows compatibility percentages and descriptive text.
-- Reason: To add the user-requested zodiac compatibility feature, with a robust architecture using a separate results page and a centralized API service.
-- Impact: `proxy-server/server.js`, `src/services/api.js`, `src/pages/Compatibility.jsx`, `src/pages/CompatibilityResult.jsx`
+### 2025-11-19: Implemented Autocomplete for Birth Place (hook + component + proxy)
