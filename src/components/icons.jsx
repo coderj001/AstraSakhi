@@ -12,7 +12,7 @@ import {
   Heart,
   ArrowRight,
   ArrowLeft,
-} from 'lucide-react'
+} from 'lucide-react';
 
 export {
   ShieldCheck,
@@ -28,4 +28,4 @@ export {
   Heart,
   ArrowRight,
   ArrowLeft,
-}
+};

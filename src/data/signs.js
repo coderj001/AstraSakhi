@@ -119,4 +119,4 @@ export const zodiacSigns = [
     image_url:
       'https://d1gcna0o0ldu5v.cloudfront.net/fit-in/450x450/assets/images/horoscope_page/horoscope-12.webp',
   },
-]
+];

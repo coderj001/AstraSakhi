@@ -199,4 +199,4 @@ export const featuredAstrologers = [
     price: 38,
     verified: true,
   },
-]
+];

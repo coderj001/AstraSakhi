@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Video, ShoppingBag } from '../components/icons'
+import { MessageCircle, Phone, Video, ShoppingBag } from '../components/icons';
 
 export const services = [
   {
@@ -25,9 +25,8 @@ export const services = [
   {
     name: 'DivyaVaani AI',
     icon: ShoppingBag,
-    description:
-      'Converse with the Divine Within. Talk with AI Gods and deities.',
+    description: 'Converse with the Divine Within. Talk with AI Gods and deities.',
     color: 'text-amber-500',
     bg: 'bg-amber-50',
   },
-]
+];

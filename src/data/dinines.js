@@ -42,8 +42,7 @@ export const divineEntities = [
     id: 4,
     name: 'Lakshmi',
     image: 'https://static.photos/people/200x200/134',
-    description:
-      'Goddess of wealth, fortune, and prosperity — both material and spiritual.',
+    description: 'Goddess of wealth, fortune, and prosperity — both material and spiritual.',
     chats: [
       'How can I attract abundance with humility?',
       'What is the difference between wealth and wisdom?',
@@ -128,4 +127,4 @@ export const divineEntities = [
       'Why is compassion essential for peace?',
     ],
   },
-]
+];

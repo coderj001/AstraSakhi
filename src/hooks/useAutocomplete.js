@@ -1,50 +1,45 @@
-import { useState, useCallback } from 'react'
-import apiService from '../services/api'
-import { debounce } from '../utils/debounce'
+import { useState, useCallback } from 'react';
+import apiService from '../services/api';
+import { debounce } from '../utils/debounce';
 
 export const useAutocomplete = () => {
-  const [inputValue, setInputValue] = useState('')
-  const [suggestions, setSuggestions] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [inputValue, setInputValue] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const fetchSuggestions = async (key) => {
     if (key.length < 2) {
-      setSuggestions([])
-      return
+      setSuggestions([]);
+      return;
     }
 
-    setLoading(true)
-    setError(null)
+    setLoading(true);
+    setError(null);
 
     try {
-      const result = await apiService.getCitySuggestions(key)
-      setSuggestions(result.data || [])
+      const result = await apiService.getCitySuggestions(key);
+      setSuggestions(result.data || []);
     } catch (err) {
-      setError(err)
-      setSuggestions([])
+      setError(err);
+      setSuggestions([]);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
-  const debouncedFetchSuggestions = useCallback(
-    debounce(fetchSuggestions, 300),
-    [],
-  )
+  const debouncedFetchSuggestions = useCallback(debounce(fetchSuggestions, 300), []);
 
   const onInputChange = (e) => {
-    const value = e.target.value
-    setInputValue(value)
-    debouncedFetchSuggestions(value)
-  }
+    const value = e.target.value;
+    setInputValue(value);
+    debouncedFetchSuggestions(value);
+  };
 
   const onSuggestionClick = (suggestion) => {
-    setInputValue(
-      `${suggestion.name}, ${suggestion.state}, ${suggestion.countryName}`,
-    )
-    setSuggestions([])
-  }
+    setInputValue(`${suggestion.name}, ${suggestion.state}, ${suggestion.countryName}`);
+    setSuggestions([]);
+  };
 
   return {
     inputValue,
@@ -53,5 +48,5 @@ export const useAutocomplete = () => {
     error,
     onInputChange,
     onSuggestionClick,
-  }
-}
+  };
+};
