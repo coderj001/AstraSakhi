@@ -162,6 +162,209 @@ app.post('/api/matchmaking', async (req, res) => {
   }
 });
 
+app.post('/api/kundli/ashtakvarga', async (req, res) => {
+  const url = 'https://api.kundali.astrotalk.com/v1/ashtakvarga/complete';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        origin: 'https://astrotalk.com',
+        priority: 'u=1, i',
+        referer: 'https://astrotalk.com/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': req.randomUA,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('Ashtakvarga proxy error:', error);
+    res.status(500).json({ error: 'Ashtakvarga proxy request failed' });
+  }
+});
+
+app.post('/api/kundli/divisional', async (req, res) => {
+  const url = 'https://api.kundali.astrotalk.com/v1/combined/divisional';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        origin: 'https://astrotalk.com',
+        priority: 'u=1, i',
+        referer: 'https://astrotalk.com/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': req.randomUA,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('Divisional proxy error:', error);
+    res.status(500).json({ error: 'Divisional proxy request failed' });
+  }
+});
+
+app.post('/api/kundli/dasha', async (req, res) => {
+  const url = 'https://api.kundali.astrotalk.com/v1/dasha_complete';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        origin: 'https://astrotalk.com',
+        priority: 'u=1, i',
+        referer: 'https://astrotalk.com/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': req.randomUA,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('Dasha proxy error:', error);
+    res.status(500).json({ error: 'Dasha proxy request failed' });
+  }
+});
+
+app.post('/api/kundli/report', async (req, res) => {
+  const url = 'https://api.kundali.astrotalk.com/v1/combined/report';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        origin: 'https://astrotalk.com',
+        priority: 'u=1, i',
+        referer: 'https://astrotalk.com/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': req.randomUA,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('Report proxy error:', error);
+    res.status(500).json({ error: 'Report proxy request failed' });
+  }
+});
+
+app.post('/api/kundli/general', async (req, res) => {
+  const url = 'https://api.kundali.astrotalk.com/v1/combined/general';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        origin: 'https://astrotalk.com',
+        priority: 'u=1, i',
+        referer: 'https://astrotalk.com/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': req.randomUA,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('General proxy error:', error);
+    res.status(500).json({ error: 'General proxy request failed' });
+  }
+});
+
+app.post('/api/kundli/yogini-dasha', async (req, res) => {
+  const url = 'https://api.kundali.astrotalk.com/v1/yogini_dasha_complete';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        origin: 'https://astrotalk.com',
+        priority: 'u=1, i',
+        referer: 'https://astrotalk.com/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': req.randomUA,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('Yogini Dasha proxy error:', error);
+    res.status(500).json({ error: 'Yogini Dasha proxy request failed' });
+  }
+});
+
+app.post('/api/kundli/find-combination', async (req, res) => {
+  const url = 'https://api.kundali.astrotalk.com/v1/find/combination';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        origin: 'https://astrotalk.com',
+        priority: 'u=1, i',
+        referer: 'https://astrotalk.com/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': req.randomUA,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('Find Combination proxy error:', error);
+    res.status(500).json({ error: 'Find Combination proxy request failed' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Proxy server listening at http://localhost:${port}`);
 });

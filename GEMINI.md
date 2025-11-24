@@ -99,3 +99,9 @@ if (!q) return res.status(400).json({ error: 'q required' });
 ### 2025-11-18: Implemented Zodiac Compatibility Feature (pages + service)
 
 ### 2025-11-19: Implemented Autocomplete for Birth Place (hook + component + proxy)
+
+### 2025-11-24: Enhanced Free Kundli Feature (input fix + new endpoints + report section)
+
+- Description: Fixed issue with input fields not accepting input in `FreeKundli.jsx`. Added new Kundli API endpoints (dasha, report, general, yogini-dasha, find-combination) to `proxy-server/server.js` and `src/services/api.js`. Implemented descriptive names for divisional charts and added a 'Free Report' section to `src/pages/FreeKundli.jsx`.
+- Reason: To resolve input issues, expand the available astrological data, provide more descriptive information for divisional charts, and offer a dedicated section for detailed Kundli reports.
+- Impact: `src/pages/FreeKundli.jsx`, `proxy-server/server.js`, `src/services/api.js`
