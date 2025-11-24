@@ -133,6 +133,35 @@ app.get('/api/cities/autocomplete', async (req, res) => {
   }
 });
 
+app.post('/api/matchmaking', async (req, res) => {
+  const url = 'https://api.kundali.astrotalk.com/v1/combined/match_making';
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        origin: 'https://astrotalk.com',
+        priority: 'u=1, i',
+        referer: 'https://astrotalk.com/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': req.randomUA,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('Matchmaking proxy error:', error);
+    res.status(500).json({ error: 'Matchmaking proxy request failed' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Proxy server listening at http://localhost:${port}`);
 });

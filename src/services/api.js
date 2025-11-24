@@ -24,6 +24,19 @@ const apiService = {
     }
     return response.json();
   },
+  matchMaking: async (data) => {
+    const response = await fetch(`${API_BASE_URL}/matchmaking`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  },
 };
 
 export default apiService;
