@@ -138,7 +138,7 @@ const KundliResult = ({ ashtakvarga, divisional, report, user }) => {
                            {planet} {chart.planet_retro.includes(planet) && '(R)'}
                         </span>
                         <span className="text-purple-300/70 text-xs font-mono">
-                           {chart.planet_small_deg[index].toFixed(2)}°
+                           {parseFloat(chart.planet_small_deg[index].split('-')[1] || 0).toFixed(2)}°
                         </span>
                      </div>
                   ))}
