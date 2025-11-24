@@ -1,4 +1,5 @@
 import React, { useReducer, useState } from 'react';
+import { motion } from 'framer-motion';
 import Autocomplete from '../components/Autocomplete';
 import { useAutocomplete } from '../hooks/useAutocomplete';
 import apiService from '../services/api';
@@ -28,8 +29,13 @@ const KundliForm = ({
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">{title}</h2>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="backdrop-blur-md bg-white/30 p-6 rounded-2xl shadow-lg border border-white/20"
+    >
+      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">{title}</h2>
       <form>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="mb-4">
@@ -40,7 +46,7 @@ const KundliForm = ({
               type="text"
               id="name"
               name="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-shadow shadow-md"
               placeholder="Enter name"
               onChange={handleInputChange}
               value={formData.name || ''}
@@ -54,7 +60,7 @@ const KundliForm = ({
               type="date"
               id="dob"
               name="dob"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-shadow shadow-md"
               onChange={handleInputChange}
               value={formData.dob || ''}
             />
@@ -67,7 +73,7 @@ const KundliForm = ({
               type="time"
               id="tob"
               name="tob"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-shadow shadow-md"
               onChange={handleInputChange}
               value={formData.tob || ''}
             />
@@ -95,9 +101,21 @@ const KundliForm = ({
           </div>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
+
+const ResultCard = ({ title, children }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+    className="backdrop-blur-md bg-white/30 p-6 rounded-2xl shadow-lg border border-white/20 mb-6"
+  >
+    <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">{title}</h2>
+    {children}
+  </motion.div>
+);
 
 const MatchResult = ({ result, boy, girl }) => {
   const { ashtkoot, manglik, conclusion } = result;
@@ -106,83 +124,121 @@ const MatchResult = ({ result, boy, girl }) => {
   );
 
   return (
-    <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">Kundli Matching Report</h1>
+    <div className="container mx-auto px-4 py-8">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl font-bold text-center text-white mb-4"
+      >
+        Kundli Matching Report
+      </motion.h1>
       <div className="flex justify-center items-center space-x-4 mb-6">
-        <h2 className="text-2xl font-semibold">{boy.name}</h2>
-        <span className="text-red-500 font-bold">vs</span>
-        <h2 className="text-2xl font-semibold">{girl.name}</h2>
+        <h2 className="text-3xl font-semibold text-white">{boy.name}</h2>
+        <span className="text-red-400 font-bold text-2xl">vs</span>
+        <h2 className="text-3xl font-semibold text-white">{girl.name}</h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Boy's Details</h3>
-          <p>
-            <strong>Date of Birth:</strong> {boy.dob}
-          </p>
-          <p>
-            <strong>Time of Birth:</strong> {boy.tob}
-          </p>
-          <p>
-            <strong>Place of Birth:</strong> {boy.pob}
-          </p>
+
+      <ResultCard title="Basic Details">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="text-xl font-semibold mb-2 text-gray-700">Boy's Details</h3>
+            <p>
+              <strong>Date of Birth:</strong> {boy.dob}
+            </p>
+            <p>
+              <strong>Time of Birth:</strong> {boy.tob}
+            </p>
+            <p>
+              <strong>Place of Birth:</strong> {boy.pob}
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-2 text-gray-700">Girl's Details</h3>
+            <p>
+              <strong>Date of Birth:</strong> {girl.dob}
+            </p>
+            <p>
+              <strong>Time of Birth:</strong> {girl.tob}
+            </p>
+            <p>
+              <strong>Place of Birth:</strong> {girl.pob}
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Girl's Details</h3>
-          <p>
-            <strong>Date of Birth:</strong> {girl.dob}
-          </p>
-          <p>
-            <strong>Time of Birth:</strong> {girl.tob}
-          </p>
-          <p>
-            <strong>Place of Birth:</strong> {girl.pob}
-          </p>
-        </div>
-      </div>
-      <div className="summary-section mb-6">
-        <h2 className="text-2xl font-semibold text-center mb-4">✅ Summary of the Kundli Report</h2>
-        <p className="text-center text-lg">
-          {ashtkoot.total.received_points}/{ashtkoot.total.total_points} is your Guna Milan Score.
+      </ResultCard>
+
+      <ResultCard title="✅ Summary of the Kundli Report">
+        <p className="text-center text-2xl font-bold text-indigo-600">
+          {ashtkoot.total.received_points}/{ashtkoot.total.total_points}
         </p>
-        <p className="text-center">{ashtkoot.conclusion.report}</p>
-      </div>
-      <h2 className="text-2xl font-semibold text-center mb-4">Match Ashtakoot Points</h2>
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white border border-gray-200">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="py-2 px-4 border-b">Attribute</th>
-              <th className="py-2 px-4 border-b">Male</th>
-              <th className="py-2 px-4 border-b">Female</th>
-              <th className="py-2 px-4 border-b">Received</th>
-              <th className="py-2 px-4 border-b">Out of</th>
-              <th className="py-2 px-4 border-b">Area Of Life</th>
-              <th className="py-2 px-4 border-b">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {ashtkootPoints.map(([key, value]) => (
-              <tr key={key}>
-                <td className="py-2 px-4 border-b">{key}</td>
-                <td className="py-2 px-4 border-b">{value.male_koot_attribute}</td>
-                <td className="py-2 px-4 border-b">{value.female_koot_attribute}</td>
-                <td className="py-2 px-4 border-b">{value.received_points}</td>
-                <td className="py-2 px-4 border-b">{value.total_points}</td>
-                <td className="py-2 px-4 border-b">{value.description}</td>
-                <td className="py-2 px-4 border-b">{value.description2}</td>
+        <p className="text-center mt-2 text-gray-700">{ashtkoot.conclusion.report}</p>
+      </ResultCard>
+
+      <ResultCard title="Match Ashtakoot Points">
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-transparent">
+            <thead className="hidden md:table-header-group">
+              <tr className="bg-white/20">
+                <th className="py-2 px-4 border-b border-white/20">Attribute</th>
+                <th className="py-2 px-4 border-b border-white/20">Male</th>
+                <th className="py-2 px-4 border-b border-white/20">Female</th>
+                <th className="py-2 px-4 border-b border-white/20">Received</th>
+                <th className="py-2 px-4 border-b border-white/20">Out of</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="mt-6">
-        <h2 className="text-2xl font-semibold text-center mb-4">Manglik Report</h2>
-        <p className="text-center">{manglik.report}</p>
-      </div>
-      <div className="mt-6">
-        <h2 className="text-2xl font-semibold text-center mb-4">Conclusion</h2>
-        <p className="text-center">{conclusion}</p>
-      </div>
+            </thead>
+            <tbody>
+              {ashtkootPoints.map(([key, value]) => (
+                <tr
+                  key={key}
+                  className="block md:table-row mb-4 md:mb-0 border border-white/20 rounded-lg md:border-none"
+                >
+                  <td
+                    className="flex justify-between md:table-cell py-2 px-4 border-b border-white/20 md:border-b-0"
+                    data-label="Attribute"
+                  >
+                    <span className="font-bold md:hidden">Attribute: </span>
+                    {key}
+                  </td>
+                  <td
+                    className="flex justify-between md:table-cell py-2 px-4 border-b border-white/20 md:border-b-0"
+                    data-label="Male"
+                  >
+                    <span className="font-bold md:hidden">Male: </span>
+                    {value.male_koot_attribute}
+                  </td>
+                  <td
+                    className="flex justify-between md:table-cell py-2 px-4 border-b border-white/20 md:border-b-0"
+                    data-label="Female"
+                  >
+                    <span className="font-bold md:hidden">Female: </span>
+                    {value.female_koot_attribute}
+                  </td>
+                  <td
+                    className="flex justify-between md:table-cell py-2 px-4 border-b border-white/20 md:border-b-0"
+                    data-label="Received"
+                  >
+                    <span className="font-bold md:hidden">Received: </span>
+                    {value.received_points}
+                  </td>
+                  <td className="flex justify-between md:table-cell py-2 px-4" data-label="Out of">
+                    <span className="font-bold md:hidden">Out of: </span>
+                    {value.total_points}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ResultCard>
+
+      <ResultCard title="Manglik Report">
+        <p className="text-center text-gray-700">{manglik.report}</p>
+      </ResultCard>
+
+      <ResultCard title="Conclusion">
+        <p className="text-center text-gray-700">{conclusion}</p>
+      </ResultCard>
     </div>
   );
 };
@@ -252,43 +308,43 @@ export default function KundliMatching() {
     }
   };
 
-  if (matchMakingResult) {
-    return (
-      <MatchResult
-        result={matchMakingResult}
-        boy={{ ...boyFormData, pob: boyAutocomplete.inputValue }}
-        girl={{ ...girlFormData, pob: girlAutocomplete.inputValue }}
-      />
-    );
-  }
-
-  return (
+  const pageContent = matchMakingResult ? (
+    <MatchResult
+      result={matchMakingResult}
+      boy={{ ...boyFormData, pob: boyAutocomplete.inputValue }}
+      girl={{ ...girlFormData, pob: girlAutocomplete.inputValue }}
+    />
+  ) : (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Kundli Matching</h1>
-      <p className="text-center text-gray-600 mb-8">
-        Have you ever thought, “Are we made for each other?” That’s where Kundli matching comes in.
-        It's been a trusted way for Indian families to find the right life partner for generations.
-        This method uses the age-old science of astrology to see if two people are truly compatible
-        for a happy and peaceful marriage.
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl font-bold text-center text-white mb-4"
+      >
+        Kundli Matching
+      </motion.h1>
+      <p className="text-center text-white/80 mb-8">
+        Discover if you and your partner are made for each other with our Kundli matching service.
       </p>
       <div className="max-w-2xl mx-auto">
-        <div className="flex justify-center border-b-2 border-gray-200 mb-6">
+        <div className="flex justify-center border-b-2 border-white/20 mb-6">
           <button
             onClick={() => setActiveTab('boy')}
-            className={`px-6 py-3 text-lg font-medium focus:outline-none ${
+            className={`px-6 py-3 text-lg font-medium focus:outline-none transition-colors ${
               activeTab === 'boy'
-                ? 'border-b-2 border-indigo-600 text-indigo-600'
-                : 'text-gray-500 hover:text-gray-700'
+                ? 'border-b-2 border-indigo-400 text-white'
+                : 'text-white/60 hover:text-white'
             }`}
           >
             Boy's Details
           </button>
           <button
             onClick={() => setActiveTab('girl')}
-            className={`px-6 py-3 text-lg font-medium focus:outline-none ${
+            className={`px-6 py-3 text-lg font-medium focus:outline-none transition-colors ${
               activeTab === 'girl'
-                ? 'border-b-2 border-indigo-600 text-indigo-600'
-                : 'text-gray-500 hover:text-gray-700'
+                ? 'border-b-2 border-indigo-400 text-white'
+                : 'text-white/60 hover:text-white'
             }`}
           >
             Girl's Details
@@ -297,30 +353,46 @@ export default function KundliMatching() {
 
         {activeTab === 'boy' ? (
           <KundliForm
-            title="Fill Up Partner's Detail"
+            title="Enter Boy's Details"
             formData={boyFormData}
             onFormChange={setBoyFormData}
             {...boyAutocomplete}
           />
         ) : (
           <KundliForm
-            title="Fill Up Partner's Detail"
+            title="Enter Girl's Details"
             formData={girlFormData}
             onFormChange={setGirlFormData}
             {...girlAutocomplete}
           />
         )}
         <div className="text-center mt-6">
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={handleSubmit}
-            className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-indigo-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-lg transition-transform"
           >
             Match Horoscope
-          </button>
+          </motion.button>
         </div>
-        {loading && <p className="text-center mt-4">Loading...</p>}
-        {error && <p className="text-center mt-4 text-red-500">{error}</p>}
+        {loading && (
+          <p className="text-center mt-4 text-white" aria-live="polite">
+            Loading...
+          </p>
+        )}
+        {error && (
+          <p className="text-center mt-4 text-red-400" aria-live="assertive">
+            {error}
+          </p>
+        )}
       </div>
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-indigo-800 text-white">
+      {pageContent}
     </div>
   );
 }
