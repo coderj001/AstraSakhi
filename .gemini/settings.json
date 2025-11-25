@@ -1,0 +1,18 @@
+{
+  "ui": {
+    "showStatusInTitle": true,
+    "hideTips": true,
+    "hideBanner": true,
+    "hideContextSummary": true,
+    "showMemoryUsage": true,
+    "showLineNumbers": true
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    }
+  },
+  "general": {
+    "previewFeatures": true
+  }
+}

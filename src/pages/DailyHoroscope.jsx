@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import apiService from '../services/api';
 import { zodiacSigns } from '../data/signs.js';
+import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorDisplay from '../components/ErrorDisplay';
 
 export default function DailyHoroscope() {
   const [horoscopes, setHoroscopes] = useState([]);
@@ -48,11 +50,11 @@ export default function DailyHoroscope() {
   };
 
   if (loading) {
-    return <div className="text-center text-gray-600">Loading horoscopes...</div>;
+    return <LoadingSpinner />;
   }
 
   if (error) {
-    return <div className="text-center text-red-600">Error: {error.message}</div>;
+    return <ErrorDisplay message={error.message} />;
   }
 
   return (

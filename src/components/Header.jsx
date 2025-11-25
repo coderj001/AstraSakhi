@@ -80,18 +80,18 @@ export default function Header({ setLanguage }) {
             >
               <FormattedMessage id="language.switcher" />
             </button>
-            <Link
-              to="/login"
-              className="px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100"
-            >
-              Log In
-            </Link>
-            <Link
-              to="/signup"
-              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm"
-            >
-              Sign Up
-            </Link>
+            {/* <Link */}
+            {/*   to="/login" */}
+            {/*   className="px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100" */}
+            {/* > */}
+            {/*   Log In */}
+            {/* </Link> */}
+            {/* <Link */}
+            {/*   to="/signup" */}
+            {/*   className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm" */}
+            {/* > */}
+            {/*   Sign Up */}
+            {/* </Link> */}
           </div>
 
           {/* Mobile Menu Button */}

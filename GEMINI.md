@@ -100,8 +100,8 @@ if (!q) return res.status(400).json({ error: 'q required' });
 
 ### 2025-11-19: Implemented Autocomplete for Birth Place (hook + component + proxy)
 
-### 2025-11-24: Enhanced Free Kundli Feature (input fix + new endpoints + report section)
+### 2025-11-25: Refactored Daily Horoscope Loading and Error UI
 
-- Description: Fixed issue with input fields not accepting input in `FreeKundli.jsx`. Added new Kundli API endpoints (dasha, report, general, yogini-dasha, find-combination) to `proxy-server/server.js` and `src/services/api.js`. Implemented descriptive names for divisional charts and added a 'Free Report' section to `src/pages/FreeKundli.jsx`.
-- Reason: To resolve input issues, expand the available astrological data, provide more descriptive information for divisional charts, and offer a dedicated section for detailed Kundli reports.
-- Impact: `src/pages/FreeKundli.jsx`, `proxy-server/server.js`, `src/services/api.js`
+- Description: Created reusable `LoadingSpinner.jsx` and `ErrorDisplay.jsx` components. Replaced inline loading and error UI in `DailyHoroscope.jsx` with these new components.
+- Reason: To improve code reusability, maintainability, and provide a consistent loading and error experience across the application.
+- Impact: `src/pages/DailyHoroscope.jsx`, `src/components/LoadingSpinner.jsx`, `src/components/ErrorDisplay.jsx`
