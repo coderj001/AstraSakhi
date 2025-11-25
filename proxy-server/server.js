@@ -4,7 +4,7 @@ const cors = require('cors');
 const userAgents = require('./user_agents');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -376,6 +376,13 @@ app.post('/api/kundli/find-combination', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
+app.post('/healthz', async (req, res) => {
+  res.json({
+    statue: "ok",
+    timestamp: new Date().toISOString()
+  })
+})
+
+app.listen(port, '0.0.0.0', () => {
   console.log(`Proxy server listening at http://localhost:${port}`);
 });
