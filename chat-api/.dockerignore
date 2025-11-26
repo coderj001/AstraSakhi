@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Dotenv
+.env
+
+# Poetry
+.poetry/
+poetry.lock
+
+# uv
+.uv/
+uv.lock
+
+# Git
+.git
+.gitignore
+
+# Other
+.DS_Store
