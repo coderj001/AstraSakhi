@@ -105,3 +105,9 @@ if (!q) return res.status(400).json({ error: 'q required' });
 - Description: Created reusable `LoadingSpinner.jsx` and `ErrorDisplay.jsx` components. Replaced inline loading and error UI in `DailyHoroscope.jsx` with these new components.
 - Reason: To improve code reusability, maintainability, and provide a consistent loading and error experience across the application.
 - Impact: `src/pages/DailyHoroscope.jsx`, `src/components/LoadingSpinner.jsx`, `src/components/ErrorDisplay.jsx`
+
+### 2025-11-27: Updated HeroSection with Solar System Animation
+
+- Description: Implemented a new "Solar System" background animation using `SolarSystemBackground.jsx` and updated `HeroSection.jsx` to a dark theme with glassmorphism effects. Added global animations in `index.css`.
+- Reason: To match the reference design and provide a more premium, engaging user experience.
+- Impact: `src/components/HeroSection.jsx`, `src/components/SolarSystemBackground.jsx`, `src/index.css`

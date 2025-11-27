@@ -11,7 +11,8 @@
     "check": "biome check --apply .",
     "preview": "vite preview",
     "proxy-server": "node proxy-server/server.js",
-    "proxy-server-dev": "nodemon proxy-server/server.js"
+    "proxy-server-dev": "nodemon proxy-server/server.js",
+    "start:chat-api": "cd chat-api && ./.venv/bin/uvicorn main:app --reload --host 127.0.0.1 --port 8001"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

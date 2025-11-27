@@ -378,10 +378,10 @@ app.post('/api/kundli/find-combination', async (req, res) => {
 
 app.post('/healthz', async (req, res) => {
   res.json({
-    statue: "ok",
-    timestamp: new Date().toISOString()
-  })
-})
+    statue: 'ok',
+    timestamp: new Date().toISOString(),
+  });
+});
 
 app.listen(port, '0.0.0.0', () => {
   console.log(`Proxy server listening at http://localhost:${port}`);
